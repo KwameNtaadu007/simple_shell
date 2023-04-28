@@ -30,12 +30,16 @@ int is_valid_integer(char *str)
 int exit_shell(core_data *crdata)
 {
 	unsigned long ustatus;
+	int is_ustatus, isvalidint;
 	char *endptr;
 
 	if (crdata->args[1] != NULL)
 	{
 		ustatus = strtoul(crdata->args[1], &endptr, 10);
-		if (*endptr != '\0' || !is_valid_integer(crdata->args[1]) || ustatus > INT_MAX)
+		is_ustatus = ustatus > INT_MAX;
+		isvalidint = !is_valid_integer(crdata->args[1]);
+
+		if (*endptr != '\0' || isvalidint || is_ustatus)
 		{
 			catch_error(crdata, 2);
 			crdata->status = 2;
