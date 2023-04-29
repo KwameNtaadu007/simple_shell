@@ -215,19 +215,18 @@ int catch_error(core_data *crdata, int eval);
 void get_sigint(int signal_num);
 
 /* help_functions.c */
-void aux_help_env(void);
-void aux_help_setenv(void);
-void aux_help_unsetenv(void);
-void aux_help_general(void);
-void aux_help_exit(void);
+void sh_help_env(void);
+void sh_help_setenv(void);
+void sh_help_unsetenv(void);
+void sh_help_general(void);
+void sh_help_exit(void);
 
 /* help_functions0.c */
-void aux_help(void);
-void aux_help_alias(void);
-void aux_help_cd(void);
+void sh_help(void);
+void sh_help_alias(void);
+void sh_help_cd(void);
 
 /* give_help.c */
 int give_help(core_data *crdata);
 
 #endif
-
